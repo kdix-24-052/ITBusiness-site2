@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>認証ページ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 100px; }
+    input[type="password"] { padding: 10px; font-size: 16px; }
+    button { padding: 10px 20px; font-size: 16px; margin-left: 10px; }
+    #error { color: red; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>パスワードを入力してください</h1>
+  <input type="password" id="password" placeholder="パスワードを入力">
+  <button onclick="checkPassword()">送信</button>
+  <p id="error"></p>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const correct = "thank you"; // 🔑 ←ここで任意のパスワードを設定
+      if (input === correct) {
+        window.location.href = "main.html"; // 元のサイトへ
+      } else {
+        document.getElementById("error").textContent = "パスワードが間違っています";
+      }
+    }
+  </script>
+</body>
+</html>
